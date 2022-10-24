@@ -1,7 +1,7 @@
 body{
-  background: rgb(15, 10, 10);
+  background: rgb(247, 154, 154);
 }
-.app-wrapper{
+.app_wrapper{
   display: grid;
   width: 1200px;
   margin: 0 auto;
@@ -14,3 +14,8 @@ body{
   
   grid-gap: 5px;
 }
+
+.app_wrapper_content{
+    grid-area: c;
+    background: rgb(250, 250, 74);
+    }
