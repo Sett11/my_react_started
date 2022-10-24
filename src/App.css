@@ -11,7 +11,7 @@ body{
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   
-  grid-gap: 10px;
+  grid-gap: 5px;
 }
 
 .header{
@@ -35,7 +35,7 @@ background: rgb(184, 204, 247);
 
 .content{
 grid-area: c;
-background: rgb(167, 129, 129);
+background: rgb(189, 43, 43);
 }
 .content img{
   width: 50%;
