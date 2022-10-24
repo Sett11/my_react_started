@@ -1,5 +1,5 @@
 body{
-  background: rgb(247, 154, 154);
+  background: rgb(82, 31, 31);
 }
 .app_wrapper{
   display: grid;
@@ -17,5 +17,5 @@ body{
 
 .app_wrapper_content{
     grid-area: c;
-    background: rgb(250, 250, 74);
+    background: rgb(163, 163, 79);
     }
