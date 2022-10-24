@@ -7,37 +7,10 @@ body{
   margin: 0 auto;
   grid-template-areas:
   "h h"
-  "n c";
+  "n c"
+  "f f_l";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   
   grid-gap: 5px;
-}
-
-.header{
-grid-area: h;
-background: rgb(243, 224, 218);
-}
-
-.header img{
-  width: 40px;
- height: 40px;
- margin-top: 10px;
- margin-left: 10px;
- border: black 1px solid;
- border-radius: 45% 10%;
-}
-
-.nav{
-grid-area: n;
-background: rgb(184, 204, 247);
-}
-
-.content{
-grid-area: c;
-background: rgb(189, 43, 43);
-}
-.content img{
-  width: 50%;
-  height: 100%;
 }

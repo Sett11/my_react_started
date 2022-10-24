@@ -1,0 +1,16 @@
+.content{
+  grid-area: c;
+  background: rgb(250, 250, 74);
+  }
+  .content img{
+    width: 50%;
+    height: 100%;
+  }
+
+  .elem{
+    color: rgb(241, 7, 7);
+  }
+
+  .elem.active{
+    background: rgb(12, 12, 12);
+  }

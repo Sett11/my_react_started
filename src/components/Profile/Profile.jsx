@@ -1,8 +1,10 @@
 import React from 'react';
+import MyPosts from './MyPosts/Post/MyPosts';
+import s from './Profile.module.css'
 
 const Profile = ()=>{
     return(
-        <div className='content'>
+        <div className={s.content}>
         <div>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ_G9U9095poYEIvtg8fnA2Ef3dcjLEebptQ&usqp=CAU"/>
         </div>
@@ -10,15 +12,8 @@ const Profile = ()=>{
         ava + description
        </div>
        <div>
-        My posts
-        <div>New post
-  
+       <MyPosts />
         </div>
-        <div>
-          <div>Post 1</div>
-          <div>Post 2</div>
-        </div>
-       </div>
        </div>
     )
 }
