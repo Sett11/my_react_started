@@ -1,23 +1,35 @@
-import React from 'react';
-import s from './MyPosts.module.css'
-import Post from './Post';
+import React from "react";
+import s from "./MyPosts.module.css";
+import Post from "./Post";
 
-const MyPosts = (props)=>{
-    return(
+const MyPosts = (props) => {
+  let postsData = [
+    { id: 1, message: "Hi, how are you?!", likesCount: 15 },
+    { id: 2, message: "It's my first post.", likesCount: 20 },
+  ];
+
+  return (
+    <div className="s.postsBlock">
+      <h3>My posts</h3>
       <div>
         <textarea></textarea>
+      </div>
+      <div>
         <button>Add post</button>
-        <div className={`${s.elem} ${s.aktive}`}>New post
-        </div>
-        <div className={s.posts}>
-          <Post message="Hi, how are you?" likesCount = "15" />
-          <Post message ="It's my first post." likesCount = "20" />
-        </div>
-       </div>
-       
-    )
-}
+      </div>
+      <div className={`${s.elem} ${s.aktive}`}>New post</div>
+      <div className={s.posts}>
+        <Post
+          message={postsData[0].message}
+          likesCount={postsData[0].likesCount}
+        />
+        <Post
+          message={postsData[1].message}
+          likesCount={postsData[1].likesCount}
+        />
+      </div>
+    </div>
+  );
+};
 
-
-
-export default MyPosts
+export default MyPosts;
