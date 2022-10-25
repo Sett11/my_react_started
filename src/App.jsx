@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
@@ -9,9 +8,7 @@ import Music from './components/Navbar/Music/Music';
 import News from './components/Navbar/News/News';
 import Setting from './components/Navbar/Setting/Setting';
 
-
-
-const App =()=> {
+const App =(props)=> {
   return (
     <BrowserRouter>
     <div className='app_wrapper'>
@@ -19,8 +16,8 @@ const App =()=> {
       <Navbar />
       <div className='app_wrapper_content'>
     <Routes>
-      <Route path="/profile" element={<Profile/>}/>
-      <Route path="/dialogs/*" element={<Dialogs/>}/>
+    <Route path="/dialogs/*" element= {<Dialogs dialogsData = {props.dialogsData} messagesData = {props.messagesData} />}/>
+    <Route path="/profile" element= { <Profile postsData = {props.postsData} />} />
       <Route path="/news" element={<News/>}/>
       <Route path="/music" element={<Music/>}/>
       <Route path="/setting" element={<Setting/>}/>
