@@ -26,9 +26,13 @@ let state = {
       { id: 6, name: "Adolf" },
     ],
   },
-  siteBar:{
-    
-  }
+  siteBar: {
+    friendsPage: [
+      { id: 1, name: "Vasia" },
+      { id: 2, name: "Petya" },
+      { id: 3, name: "Fedya" },
+    ],
+  },
 };
 
 export default state;

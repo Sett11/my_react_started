@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Music from "./components/Navbar/Music/Music";
 import News from "./components/Navbar/News/News";
 import Setting from "./components/Navbar/Setting/Setting";
+import Friends from "./components/Navbar/Friends/Friends";
 
 const App = (props) => {
   return (
@@ -27,6 +28,7 @@ const App = (props) => {
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />
+            <Route path="/friends" element={<Friends state={props.state.friendsPage}/>} />
           </Routes>
         </div>
       </div>
