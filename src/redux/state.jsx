@@ -1,3 +1,5 @@
+import rerenderEntireFree from "../render";
+
 let state = {
   profilePage: {
     posts: [
@@ -6,6 +8,7 @@ let state = {
       { id: 3, message: "It's my second post.", likesCount: 12 },
       { id: 4, message: "It's my next post.", likesCount: 8 },
     ],
+    newPostText: 'w',
   },
 
   dialogsPage: {
@@ -31,8 +34,24 @@ let state = {
       { id: 1, name: "Vasia" },
       { id: 2, name: "Petya" },
       { id: 3, name: "Fedya" },
+      { id: 4, name: "Durak" },
     ],
   },
 };
 
-export default state;
+let addPost = (postMessage)=>{
+  let newPost = {
+    id:5,
+    message: postMessage,
+    likesCount:0
+  }
+  state.profilePage.posts.push(newPost)
+  rerenderEntireFree(state)
+}
+let upDateNewPostText = (newText)=>{
+  state.profilePage.newPostText = newText
+  rerenderEntireFree(state)
+}
+
+
+export {state, addPost, upDateNewPostText} 
