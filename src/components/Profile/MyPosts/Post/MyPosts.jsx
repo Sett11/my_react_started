@@ -1,36 +1,42 @@
 import React from "react";
-import { upDateNewPostText } from "../../../../redux/state";
+import { updateNewPostText } from "../../../../redux/state";
 import s from "./MyPosts.module.css";
 import Post from "./Post";
 
 const MyPosts = (props) => {
   let postsElements = props.posts.map((p) => (
-    <Post message={p.message} likesCount={p.likesCount} upDateNewPostText={p.upDateNewPostText}/>
+    <Post message={p.message} likesCount={p.likesCount} />
   ));
 
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    let text = newPostElement.current.value;
-    props.addPost(text);
+    props.dispath({type:'ADD-POST'});
   };
   let onPostChange = ()=>{
-    let text = newPostElement.current.value;
-    props.upDateNewPostText(text);
-  }
-  return (
-    <div className="s.postsBlock">
-      <h3>My posts</h3>
+      let text = newPostElement.current.value;
+      // props.addPost(text);
+      let action = {type:'UPDATE-NEW-POST-TEXT', newText: text}
+       props.dispath(action);
+       newPostElement.current.value = '';
+}
+   return (
+  <div className={s.postsBlock}>
+  <h3>My posts</h3>
+  <div>
       <div>
-        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
+          <textarea ref={newPostElement} 
+                    value={props.newPostText} onChange={onPostChange}/>
       </div>
       <div>
-        <button onClick={addPost}>Add post</button>
+          <button onClick={ addPost } >Add post</button>
       </div>
-      <div className={`${s.elem} ${s.aktive}`}>New post</div>
-      <div className={s.posts}>{postsElements}</div>
-    </div>
-  );
-};
+  </div>
+  <div className={s.posts}>
+      { postsElements }
+  </div>
+</div>
+)
+}
 
 export default MyPosts;

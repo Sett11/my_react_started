@@ -25,7 +25,7 @@ const App = (props) => {
                   state={props.state.dialogsPage}/>}/>
             <Route
               path="/profile"
-              element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} upDateNewPostText={props.upDateNewPostText} />}/>
+              element={<Profile profilePage={props.state.profilePage} dispath={props.dispath} />}/>
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />
@@ -38,3 +38,4 @@ const App = (props) => {
 };
 
 export default App;
+
