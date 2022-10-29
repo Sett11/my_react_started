@@ -1,5 +1,16 @@
+import dialogsReducer from "./dialogsReducer";
+import profileReducer from "./profileReduser";
+import sideBarReducer from "./sideBarReducer";
+
+// const ADD_POST =  "ADD-POST";
+// const UPDATE_NEW_POST_TEXT =  "UPDATE-NEW-POST-TEXT";
+
+// const UPDATE_NEW_MESSAGE_BODY =  "UPDATE_NEW_MESSAGE_BODY";
+// const SEND_MESSAGE = "SEND_MESSAGE"
+
+
 let store = {
-  _state:{
+  _state: {
     profilePage: {
       posts: [
         { id: 1, message: "Hi, how are you?!", likesCount: 15 },
@@ -7,9 +18,9 @@ let store = {
         { id: 3, message: "It's my second post.", likesCount: 12 },
         { id: 4, message: "It's my next post.", likesCount: 8 },
       ],
-      newPostText: '',
+      newPostText: "",
     },
-  
+
     dialogsPage: {
       messages: [
         { id: 1, message: "Hi!" },
@@ -26,9 +37,11 @@ let store = {
         { id: 4, name: "Valera" },
         { id: 5, name: "Abram" },
         { id: 6, name: "Adolf" },
+        { id:7, name: "Buth" },
       ],
+      newMessageBody: "",
     },
-    siteBar: {
+    sideBar: {
       friendsPage: [
         { id: 1, name: "Vasia" },
         { id: 2, name: "Petya" },
@@ -37,33 +50,32 @@ let store = {
       ],
     },
   },
-  _callSubscriber(){
-    console.log(1)
+  _callSubscriber() {
+    console.log(1);
   },
-  subcsribe (observer){
+  subcsribe(observer) {
     this._callSubscriber = observer;
   },
-  getState(){
-    return this._state
+  getState() {
+    return this._state;
   },
-  dispath(action){
-    if(action.type === 'ADD-POST'){
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likesCount: 0
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = '';
-    this._callSubscriber(this._state);
-    }
-    else if(action.type === 'UPDATE-NEW-POST-TEXT'){
-      this._state.profilePage.newPostText = action.newText;
+  dispath(action) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action)
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+    this._state.sideBar = sideBarReducer(this._state.sideBar, action)
+
       this._callSubscriber(this._state);
     }
   }
-}
 
-// window.store = store;
 
-export {store} 
+// const addPostActionCreator = () => ({ type: ADD_POST,})
+// const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text,})
+
+// const sendMessageCreator = () => ({ type: SEND_MESSAGE,})
+// const updateNewMessageBodyCreator= (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body,})
+
+
+window.store = store;
+
+export { store };

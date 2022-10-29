@@ -21,15 +21,14 @@ const App = (props) => {
             <Route
               path="/dialogs/*"
               element={
-                <Dialogs
-                  state={props.state.dialogsPage}/>}/>
+                <Dialogs store={props.store} />}/>
             <Route
               path="/profile"
               element={<Profile profilePage={props.state.profilePage} dispath={props.dispath} />}/>
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />
-            <Route path="/friends" element={<Friends state={props.state.siteBar}/>} />
+            <Route path="/friends" element={<Friends state={props.state.sideBar}/>} />
           </Routes>
         </div>
       </div>

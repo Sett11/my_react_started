@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  let rerenderEntireFree = (state) => {
   root.render(
     <React.StrictMode>
-<App state={state} dispath={store.dispath.bind(store)} />
+<App state={state} dispath={store.dispath.bind(store)} store={store} />
     </React.StrictMode>
   );
 };
