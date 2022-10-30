@@ -28,7 +28,7 @@ const App = (props) => {
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />
-            <Route path="/friends" element={<Friends />} />
+            <Route path="/friends" element={<Friends state={props.state.sideBar}/>} />
           </Routes>
         </div>
       </div>
