@@ -59,7 +59,7 @@ let store = {
   getState() {
     return this._state;
   },
-  dispath(action) {
+  dispatch(action) {
     this._state.profilePage = profileReducer(this._state.profilePage, action)
     this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
     this._state.sideBar = sideBarReducer(this._state.sideBar, action)
@@ -76,6 +76,6 @@ let store = {
 // const updateNewMessageBodyCreator= (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body,})
 
 
-window.store = store;
+// window.store = store;
 
 export { store };

@@ -3,21 +3,27 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./redux/state";
 import "./index.css";
+import store from "./redux/reduxStore";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
  let rerenderEntireFree = (state) => {
   root.render(
     <React.StrictMode>
-<App state={state} dispath={store.dispath.bind(store)} store={store} />
+<App state={state} dispatch={store.dispatch.bind(store)} store={store} />
     </React.StrictMode>
-  );
+  )
 };
 
 rerenderEntireFree(store.getState())
-store.subcsribe(rerenderEntireFree)
+
+store.subscribe(()=>{
+  let state = store.getState()
+
+  rerenderEntireFree(state)
+})
 // subcsribe(rerenderEntireFree)
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

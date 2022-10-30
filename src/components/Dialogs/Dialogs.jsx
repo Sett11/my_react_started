@@ -18,7 +18,7 @@ const Dialogs = (props) => {
   // let newMessageElement = React.createRef()
 
   let onSendMessageClick = ()=>{
-    props.store.dispath(sendMessageCreator())
+    props.store.dispatch(sendMessageCreator())
   }
 
 
@@ -26,7 +26,7 @@ const Dialogs = (props) => {
 
   let onNewMessageChanch = (e)=>{
    let body = e.target.value;
-   props.store.dispath(updateNewMessageBodyCreator(body))
+   props.store.dispatch(updateNewMessageBodyCreator(body))
   }
 
   return (
