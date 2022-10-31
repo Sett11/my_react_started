@@ -2,9 +2,9 @@ import React from 'react';
 import Friend from './Friend';
 import s from './Friends.module.css'
 
-const Friends = (props)=>{
+const Friends = (state)=>{
 
-    let friendsElements = props.state.friendsPage.map((f) => (
+    let friendsElements = state.sideBar.friendsPage.map((f) => (
         <Friend name ={f.name} />
       ));
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './Friends.module.css'
 
-const Friend = (props)=>{
+const Friend = (state)=>{
     return(
        <div>
-       { props.name }
+       { state.sideBar.friendsPage.name }
         </div>
        
     )
