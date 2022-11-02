@@ -9,7 +9,6 @@ import News from "./components/Navbar/News/News";
 import Setting from "./components/Navbar/Setting/Setting";
 import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import Users from "./components/Users/Users";
 import UsersContainer from "./components/Users/UsersContainer";
 
 const App = (props) => {
